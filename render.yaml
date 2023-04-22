@@ -1,0 +1,7 @@
+services:
+  - name: myappok
+    env: .env
+    buildCommand: 'docker build --tag myapp:latest .'
+    startCommand: 'gunicorn wsgi:app --bind 0.0.0.0:$PORT --workers=4'
+    healthCheckPath: '/api/healthcheck'
+    internalPort: 8000
