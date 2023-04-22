@@ -2,7 +2,7 @@ services:
   - name: web
     dockerfile: Dockerfile
     env:
-     PORT: 8000
+     PORT: 8080
 
 
     start_cmd: gunicorn --bind=0.0.0.0:$PORT wsgi:app
