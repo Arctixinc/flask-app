@@ -2,8 +2,8 @@ services:
   - name: web
     dockerfile: Dockerfile
     env:
-      - key: PORT
-        value: 8080
+      PORT: 8080
+
     start_cmd: gunicorn --bind=0.0.0.0:$PORT wsgi:app
     build_command: pip install -r requirements.txt
 
